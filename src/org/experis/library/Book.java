@@ -1,13 +1,13 @@
 package org.experis.library;
 
 public class Book {
-    // attibutes
+    // Attibutes
     private String title;
     private int numberPage;
     private String author;
     private String editor;
 
-    // constructors
+    // Constructors
 
     public Book(String title, int numberPage, String author, String editor) throws IllegalArgumentException{
         if(title == null || title.isEmpty() ){
@@ -28,7 +28,7 @@ public class Book {
         this.editor = editor;
     }
 
-    // getter and setter
+    // Getter and Setter
 
     public String getTitle() {
         return title;
@@ -75,8 +75,8 @@ public class Book {
     }
 
 
-    // methods
+    // Methods
     public String getAllInfo() {
-        return String.format("Title: %s \nPages: %d \nAuthor: %s\nEditor: %s\n", title, numberPage,author,editor);
+        return String.format("Title: %s \nPages: %d \nAuthor: %s\nEditor: %s\n\n", title, numberPage,author,editor);
     }
 }
