@@ -28,19 +28,33 @@ public class Main {
 
 
         for (int i = 0; i < books.length; i++) {
-            System.out.print("Insert title: ");
-            String title = scan.nextLine();
-            System.out.print("Insert number of pages: ");
-            int pages = Integer.parseInt(scan.nextLine());
-            System.out.print("Insert author: ");
-            String author = scan.nextLine();
-            System.out.print("Insert editor: ");
-            String editor = scan.nextLine();
+            String title = null;
+            int pages = 0;
+            String author = null;
+            String editor = null;
+            try {
+                System.out.print("Insert title: ");
+                title = scan.nextLine();
 
-            books[i] = new Book(title,pages,author,editor);
+                System.out.print("Insert number of pages: ");
+                pages = Integer.parseInt(scan.nextLine());
+
+                System.out.print("Insert author: ");
+                author = scan.nextLine();
+
+                System.out.print("Insert editor: ");
+                editor = scan.nextLine();
+                books[i] = new Book(title,pages,author,editor);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error" + e.getMessage());
+            }
+
+
         }
 
-        System.out.println(Arrays.toString(books));
+        for(Book book : books){
+            System.out.println(book.getAllInfo());
+        }
 
 
         scan.close();

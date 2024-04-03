@@ -76,4 +76,7 @@ public class Book {
 
 
     // methods
+    public String getAllInfo() {
+        return String.format("Title: %s \nPages: %d \nAuthor: %s\nEditor: %s\n", title, numberPage,author,editor);
+    }
 }
