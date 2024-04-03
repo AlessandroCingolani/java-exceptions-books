@@ -7,11 +7,25 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+        boolean flagArraySize = false;
+        int numberBooks = 0;
+        Book[] books = new Book[0];
 
-        System.out.println("How many books you want to add?");
-        int numberBooks = Integer.parseInt(scan.nextLine());
+        do {
+            try {
+                System.out.println("How many books you want to add?");
+                numberBooks = Integer.parseInt(scan.nextLine());
+                try {
+                    books = new Book[numberBooks];
+                    flagArraySize = true;
+                } catch (NegativeArraySizeException e) {
+                    System.out.println("The input can't be negative value");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("The input is not a number");
+            }
+        }while (!flagArraySize);
 
-        Book[] books = new Book[numberBooks];
 
         for (int i = 0; i < books.length; i++) {
             System.out.print("Insert title: ");
