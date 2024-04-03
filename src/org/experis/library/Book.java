@@ -10,14 +10,14 @@ public class Book {
     // constructors
 
     public Book(String title, int numberPage, String author, String editor) throws IllegalArgumentException{
-        if(title != null || title.isEmpty()){
-            throw new IllegalArgumentException("Title cannot be void or empty");
+        if(title == null || title.isEmpty() ){
+            throw new IllegalArgumentException("Title cannot be null or empty");
         }
-        if(author != null || author.isEmpty()){
-            throw new IllegalArgumentException("Author cannot be void or empty");
+        if(author == null || author.isEmpty()){
+            throw new IllegalArgumentException("Author cannot be null or empty");
         }
-        if(editor != null || editor.isEmpty()){
-            throw new IllegalArgumentException("Editor cannot be void or empty");
+        if(editor == null || editor.isEmpty()){
+            throw new IllegalArgumentException("Editor cannot be null or empty");
         }
         if(numberPage <= 0 || numberPage > 7000){
             throw new IllegalArgumentException("Number of pages should be between 1 and 7000");
@@ -35,7 +35,7 @@ public class Book {
     }
 
     public void setTitle(String title) {
-        if(title != null || title.isEmpty()){
+        if(title == null || title.isEmpty()){
             throw new IllegalArgumentException("Title cannot be void or empty");
         }
         this.title = title;
@@ -57,7 +57,7 @@ public class Book {
     }
 
     public void setAuthor(String author) {
-        if(author != null || author.isEmpty()){
+        if(author == null || author.isEmpty()){
             throw new IllegalArgumentException("Author cannot be void or empty");
         }
         this.author = author;
@@ -68,7 +68,7 @@ public class Book {
     }
 
     public void setEditor(String editor) {
-        if(editor != null || editor.isEmpty()){
+        if(editor == null || editor.isEmpty()){
             throw new IllegalArgumentException("Editor cannot be void or empty");
         }
         this.editor = editor;
