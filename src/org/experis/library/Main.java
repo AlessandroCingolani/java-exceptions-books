@@ -7,7 +7,10 @@ public class Main {
 
         Scanner scan = new Scanner(System.in);
 
-        System.out.println("");
+        System.out.println("How many books you want to add?");
+        int numberBooks = Integer.parseInt(scan.nextLine());
 
+
+        scan.close();
     }
 }
