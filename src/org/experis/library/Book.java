@@ -79,4 +79,14 @@ public class Book {
     public String getAllInfo() {
         return String.format("Title: %s \nPages: %d \nAuthor: %s\nEditor: %s\n\n", title, numberPage,author,editor);
     }
+
+//    @Override
+//    public String toString() {
+//        return "Book{" +
+//                "title='" + title + '\'' +
+//                ", numberPage=" + numberPage +
+//                ", author='" + author + '\'' +
+//                ", editor='" + editor + '\'' +
+//                '}';
+//    }
 }

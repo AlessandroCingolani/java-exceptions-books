@@ -1,6 +1,7 @@
 package org.experis.library;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -67,5 +68,12 @@ public class Main {
         }
 
 
+        try(Scanner fileReader = new Scanner(new File("./resources/data.txt"))){
+            while (fileReader.hasNextLine()) {
+                System.out.println(fileReader.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
     }
 }
